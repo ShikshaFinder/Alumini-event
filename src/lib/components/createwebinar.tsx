@@ -12,7 +12,7 @@ import {
   InputRightElement,
   Link,
   Stack,
-  Text,
+  Textarea,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
@@ -21,14 +21,10 @@ import { useState } from "react";
 type Props = {};
 
 function alumni({}: Props) {
- 
-  
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [desc, setDesc] = useState("");
   const [enroll, setEnroll] = useState("");
   const [passout, setPassout] = useState("");
-
-
 
   return (
     <div>
@@ -41,7 +37,7 @@ function alumni({}: Props) {
         <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
           <Stack align={"center"}>
             <Heading fontSize={"4xl"} textAlign={"center"}>
-              Become Alumni
+              Create A Webinar
             </Heading>
           </Stack>
           <Box
@@ -61,17 +57,15 @@ function alumni({}: Props) {
                   }}
                 />
               </FormControl>
-              <FormControl id="email" isRequired>
-                <FormLabel>Email</FormLabel>
-                <Input
-                  type="email"
-                  value={email}
+              <FormControl id="discription" isRequired>
+                <FormLabel>Discription</FormLabel>
+                <Textarea
+                  value={desc}
                   onChange={(e) => {
-                    setEmail(e.target.value);
+                    setDesc(e.target.value);
                   }}
                 />
-
-              </FormControl>
+                {/* </FormControl>
               <FormControl id="enroll" isRequired>
                 <FormLabel>Enrollment number</FormLabel>
                 <Input
@@ -80,8 +74,8 @@ function alumni({}: Props) {
                   onChange={(e) => {
                     setEnroll(e.target.value);
                   }}
-                />
-              </FormControl>
+                /> */}
+                {/* </FormControl>
               <FormControl id="passoutyear" isRequired>
                 <FormLabel>Passout Year</FormLabel>
                 <Input
@@ -90,14 +84,11 @@ function alumni({}: Props) {
                   onChange={(e) => {
                     setPassout(e.target.value);
                   }}
-                />
+                /> */}
               </FormControl>
-              {/* <input type="datetime-local" /> */}
+              <input type="datetime-local" />
               <Stack spacing={10} pt={2}>
-                <Button
-                  loadingText="Submitting"
-                  size="lg"
-                >
+                <Button loadingText="Submitting" size="lg">
                   Apply
                 </Button>
               </Stack>
